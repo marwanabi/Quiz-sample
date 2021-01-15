@@ -54,7 +54,7 @@ function renderQuestions() {
     var result = getID("result");
     if (pos >= allQuestions.length) {
         testStatus.innerHTML = "Test Completed";
-        result.innerHTML = "<div class=''><h2>Your Results Here</h2><h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</h3><img src=\"images/results.png\"><button type='button' class='start-button'>TAKE THE QUIZ AGAIN <span><img src=\"images/right-arrow.png\"></span></button></div>";
+        result.innerHTML = "<div class=''><h2>Your Results Here</h2><h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</h3><img src=\"images/results.png\"><button type='button' class='start-button'>TAKE THE QUIZ AGAIN <span><img class='arrow' src=\"images/right-arrow.png\"></span></button></div>";
         pos = 0;
         return false
     };
@@ -90,9 +90,9 @@ function renderQuestions() {
                 break;
         }
         if (savedAnswers[pos] == j) {
-            test.innerHTML += '<label class="checked"> <span>' + letter +'. </span><br><input type="radio" checked="true" value="' + letter + '" name="answerChoice" /><br> ' + letterOp + '</label>';
+            test.innerHTML += '<label class="checked"> <span>' + letter +'. </span><br><input type="radio" checked="true" value="' + letter + '" name="answerChoice" /><br><div> ' + letterOp + '</div></label>';
         } else {
-            test.innerHTML += '<label> <span>' + letter +'. </span><br><input type="radio" value="' + letter + '" name="answerChoice" /> <br>' + letterOp + '</label>';
+            test.innerHTML += '<label> <span>' + letter +'. </span><br><input type="radio" value="' + letter + '" name="answerChoice" /> <br><div>' + letterOp + '</div></label>';
         }
     }
 
