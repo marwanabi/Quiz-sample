@@ -54,7 +54,7 @@ function renderQuestions() {
     var result = getID("result");
     if (pos >= allQuestions.length) {
         testStatus.innerHTML = "Test Completed";
-        result.innerHTML = "<div class=''><h2>Your Results Here</h2><h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</h3><img src=\"images/results.png\"><button type='button' class='start-button'>TAKE THE QUIZ AGAIN <span><img class='arrow' src=\"images/right-arrow.png\"></span></button></div>";
+        result.innerHTML = "<div class='result-wrapper'><div class='result-container'><h2>Your Results Here</h2><h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</h3><img src=\"images/results.png\"><button type='button' class='start-button'>TAKE THE QUIZ AGAIN <span><img class='arrow' src=\"images/right-arrow.png\"></span></button></div><div style=\"clear:both\"></div></div>";
         pos = 0;
         return false
     };
@@ -92,7 +92,7 @@ function renderQuestions() {
         if (savedAnswers[pos] == j) {
             test.innerHTML += '<label class="checked"> <span>' + letter +'. </span><br><input type="radio" checked="true" value="' + letter + '" name="answerChoice" /><br><div> ' + letterOp + '</div></label>';
         } else {
-            test.innerHTML += '<label> <span>' + letter +'. </span><br><input type="radio" value="' + letter + '" name="answerChoice" /> <br><div>' + letterOp + '</div></label>';
+            test.innerHTML += '<label onclick="dodajAktywne(this)"> <span>' + letter +'. </span><br><input class="lala" type="radio" value="' + letter + '" name="answerChoice" /> <br><div>' + letterOp + '</div></label>';
         }
     }
 
@@ -102,11 +102,14 @@ function renderQuestions() {
     if (pos == allQuestions.length - 1) {
         test.innerHTML += '<input type="button" id="prev" onclick="prevAnswer()" value="&#8592"> ';
         test.innerHTML += '<input type="button" id="next" onclick="checkAnswer()" value="Submit"> ';
+        test.innerHTML += '<div style="clear:both"></div> ';
     } else if (pos >= 1) {
         test.innerHTML += '<input type="button" id="prev" onclick="prevAnswer()" value="&#8592"> ';
         test.innerHTML += '<input type="button" id="next" onclick="checkAnswer()" value="Next"> ';
+        test.innerHTML += '<div style="clear:both"></div> ';
     } else {
         test.innerHTML += '<input type="button" id="next" onclick="checkAnswer()" value="Next"> ';
+        test.innerHTML += '<div style="clear:both"></div> ';
     }
 
     test.innerHTML += '<br /><br /><p id="error"></p>'
@@ -144,4 +147,11 @@ function checkAnswer() {
 function prevAnswer() {
     pos--;
     renderQuestions();
+}
+function dodajAktywne(elem) {
+    var a = document.getElementsByTagName('label')
+    for (i = 0; i < a.length; i++) {
+        a[i].classList.remove('active')
+    }
+    elem.classList.add('active');
 }
