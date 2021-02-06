@@ -45,7 +45,7 @@ function renderQuestions() {
     var result = getID("result");
     if (pos >= allQuestions.length) {
         testStatus.innerHTML = "Test Completed";
-        result.innerHTML = "<div class='result-wrapper'><div class='result-container'><h2>Your Results Here</h2><h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</h3><img src=\"images/results.png\"><a href='/'><button type='button' class='restart'>TAKE THE QUIZ AGAIN <span><img class='arrow' src=\"images/right-arrow.png\"></span></button></a></div><div style=\"clear:both\"></div></div>";
+        result.innerHTML = "<div class='result-wrapper'><div class='result-container'><h2>Your Results Here</h2><h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</h3><img src=\"images/results.png\"><a href='/Quiz-sample/'><button type='button' class='restart'>TAKE THE QUIZ AGAIN <span><img class='arrow' src=\"images/right-arrow.png\"></span></button></a></div><div style=\"clear:both\"></div></div>";
         pos = 0;
         return false
     };
