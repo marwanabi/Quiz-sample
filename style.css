@@ -69,6 +69,19 @@ button {
   font-size: 28px;
   font-weight: 100;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.start-button:hover,input[type=button]#next:hover{
+  background: #ffffff;
+  color: #407bff;
+  transition: all 0.3s;
+}
+
+input#prev:hover {
+    background: #407bff !important;
+    color: white !important;
+    transition: all 0.3s;
 }
 
 input[type=button]{
@@ -98,6 +111,7 @@ input[type=button]#prev{
     width: 50px;
     padding: 0;
     clear: left;
+    transition: all 0.3s;
 }
 
 #test_status{
@@ -217,6 +231,9 @@ left: 40px;
   max-width: 600px;
 }
 
+.container #result>div a{
+  text-decoration: none;
+}
 .container #result>div span>img{
   width: 28px;
 }
@@ -224,6 +241,11 @@ left: 40px;
 .container #result>div img{
   width: 100%;
   max-width: 650px;
+}
+
+button.restart:hover{
+  transform: scale(1.02);
+  transition: all 0.3s;
 }
 @media only screen and (max-width: 999px) {
   .container{
@@ -245,11 +267,21 @@ left: 40px;
 @media only screen and (max-width: 745px) {
   body{
     position: relative;
-    background: #e9f5ff;
+    background: #000;
+    height: 100%;
   }
+  .container #top-cover .hero-section {
+    padding: 0 30px;
+}
+.container #top-cover h1{
+  font-size: 45px;
+}
+button{
+  font-size: 20px;
+}
   #test{
     width: 100%;
-    padding: 80px 60px;
+    padding: 80px 20px;
   }
 #test label{
   width: 100%;
@@ -277,8 +309,23 @@ left: 40px;
 #test label:nth-child(even) {
     margin-bottom: 0;
 }
-.container #result>div{
-padding: 80px 60px;
+.container #result>.result-wrapper{
+padding: 80px 20px;
+}
+.container #result>div h3{
+  font-size: 20px
+}
+.container #result>div h2 {
+    font-size: 35px;
+    margin: 50px auto 5px;
+}
+.container #result>.result-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
 }
 }
 label.active{

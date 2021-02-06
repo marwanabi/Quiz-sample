@@ -1,12 +1,3 @@
-$( "input" ).focus(function() {
-  $( this ).parent().find( "label").addClass("focus");
-  $( this ).parent().addClass(" focus-span");
-});
-
-$( "input" ).focusout(function() {
-  $( this ).parent().find( "label").removeClass("focus");
-  $( this ).parent().removeClass(" focus-span");
-});
 var savedAnswers = [];
 var correct = 0;
 var pos = 0;
@@ -54,7 +45,7 @@ function renderQuestions() {
     var result = getID("result");
     if (pos >= allQuestions.length) {
         testStatus.innerHTML = "Test Completed";
-        result.innerHTML = "<div class='result-wrapper'><div class='result-container'><h2>Your Results Here</h2><h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</h3><img src=\"images/results.png\"><button type='button' class='start-button'>TAKE THE QUIZ AGAIN <span><img class='arrow' src=\"images/right-arrow.png\"></span></button></div><div style=\"clear:both\"></div></div>";
+        result.innerHTML = "<div class='result-wrapper'><div class='result-container'><h2>Your Results Here</h2><h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</h3><img src=\"images/results.png\"><a href='/'><button type='button' class='restart'>TAKE THE QUIZ AGAIN <span><img class='arrow' src=\"images/right-arrow.png\"></span></button></a></div><div style=\"clear:both\"></div></div>";
         pos = 0;
         return false
     };
